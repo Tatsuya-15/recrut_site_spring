@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+p {
+    color: red;
+}
+	
+#title {
+    text-align: center;
+}
+	
+.contents {
+    border: 1px solid #000;
+}

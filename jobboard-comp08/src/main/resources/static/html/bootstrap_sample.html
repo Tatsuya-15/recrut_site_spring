@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<title>Bootstrapのサンプル</title>
+</head>
+<body>
+<div class="container">
+    <div class="row mt-3 mb-3">
+        <div class="col">
+            グリッドシステムの例です。
+        </div>
+        <div class="col">
+            二つの列は同じ幅になります（この例では両方にcol-6と指定した場合と同様）
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>名前</th><th>性別</th><th>年齢</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>安藤一郎</td><td>男性</td><td>34</td>
+                    </tr>
+                    <tr>
+                        <td>井上恵子</td><td>女性</td><td>29</td>
+                    </tr>
+                    <tr>
+                        <td>鵜飼武史</td><td>男性</td><td>43</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <form action="/register" method="post">
+        <div class="form-group row">
+            <label for="name" class="col-1 col-form-label">名前</label>
+            <div class="col-2">
+                <input type="text" id="name" name="name" class="form-control">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="gender" class="col-1 col-form-label">性別</label>
+            <div class="col-2">
+                <select id="gender" name="gender" class="form-control">
+                    <option>男性</option>
+                    <option>女性</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="age" class="col-1 col-form-label">年齢</label>
+            <div class="col-2">
+                <input type="number" id="age" name="age" class="form-control">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="offset-1 col-2">
+                <input type="submit" class="btn btn-primary">
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      layout:decorate="~{layout/common}">
+<head>
+<meta charset="UTF-8">
+<title>求人情報 - Winスクール ジョブボード</title>
+</head>
+<body>
+<div layout:fragment="contents">
+
+<div class="row">
+	<div class="col">
+		<table class="table" th:object="${offer}">
+			<tr>
+				<th>会社名</th>
+				<td th:text="*{company.name}"></td>
+			</tr>
+			<tr>
+				<th>求人タイトル</th>
+				<td th:text="*{title}"></td>
+			</tr>
+			<tr>
+				<th>詳細</th>
+				<td>
+					<th:block th:each="line : *{contents.split('\n')}">
+						<th:block th:text="${line}" /><br>
+					</th:block>
+				</td>
+			</tr>
+			<tr>
+				<th>都道府県</th>
+				<td th:text="*{prefecture}"></td>
+			</tr>
+			<tr>
+				<th>勤務地</th>
+				<td th:text="*{address}"></td>
+			</tr>
+			<tr>
+				<th>給与</th>
+				<td th:text="*{salary}"></td>
+			</tr>
+			<tr>
+				<th>就業時間</th>
+				<td th:text="*{workingHours}"></td>
+			</tr>
+			<tr>
+				<th>休日</th>
+				<td th:text="*{holiday}"></td>
+			</tr>
+			<tr>
+				<th>社会保険</th>
+				<td th:text="*{insurance}"></td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<div class="row" sec:authorize="hasRole('PERSON')">
+	<div class="col">
+		<a th:href="@{|/person/offer/${offer.id}|}" class="btn btn-primary">
+			応募
+		</a>
+	</div>
+</div>
+
+</div>
+</body>
+</html>
